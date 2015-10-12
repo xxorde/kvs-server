@@ -1,0 +1,42 @@
+<html>
+<h1>
+  {{ .title }}
+</h1>
+<h2>
+  Put
+</h2>
+<form action="/put" method="post">
+  key:
+  <input type="text" name="key" value="key">
+  value:
+  <input type="text" name="value" value="value">
+  ttl:
+  <input type="number" name="ttl" value="0">
+  <input type="submit" value="Put">
+</form>
+
+<h2>
+  Delete
+</h2>
+<form action="/delete" method="post">
+  key:
+  <input type="text" name="key" value="key">
+  <input type="submit" value="Delete">
+</form>
+</html>
+
+<h2>
+  Get
+</h2>
+<form>
+  key:
+  <input type="text" name="key" value="key">
+  <input type="button" value="Get" onclick="document.getElementById('iframea').src='/get/'+key.value;">
+</form>
+
+<h3>
+  Respoce
+</h3>
+<br>
+<iframe id="iframea"></iframe>
+<br>
