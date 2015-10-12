@@ -20,6 +20,8 @@ func main() {
 	r.GET("/get/:key", Get)
 	r.POST("/put", Put)
 	r.POST("/delete", Delete)
+	r.GET("/json", JSON)
+	r.GET("/yaml", Yaml)
 	r.Run(":8080")
 }
 
@@ -52,4 +54,12 @@ func Delete(c *gin.Context) {
 	store.Delete(key)
 	content := gin.H{"delete": "ok"}
 	c.JSON(http.StatusOK, content)
+}
+
+func JSON(c *gin.Context) {
+	c.JSON(http.StatusOK, store.JSON())
+}
+
+func Yaml(c *gin.Context) {
+	c.JSON(http.StatusOK, store.Yaml())
 }
