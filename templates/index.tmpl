@@ -3,8 +3,43 @@
   {{ .title }}
 </h1>
 <h2>
-  Put
+  Usage
 </h2>
+
+<h3>
+  Put
+</h3>
+Post key and value to /put.
+You can also give an optional ttl as an epoch/Unix timestamp.
+
+<h3>
+  Get
+</h3>
+Get /get/:key to recive value.
+
+<h3>
+  Delete
+</h3>
+Post key to /delete, do delete key/value pair.
+
+<h3>
+  Json
+</h3>
+Get /json to recive a json dump.
+
+<h3>
+  Yaml
+</h3>
+Get /yaml to recive a yaml dump.
+
+
+<h2>
+  Test Form
+</h2>
+
+<h3>
+  Put
+</h3>
 <form action="/put" method="post">
   key:
   <input type="text" name="key" value="key">
@@ -15,9 +50,9 @@
   <input type="submit" value="Put">
 </form>
 
-<h2>
+<h3>
   Delete
-</h2>
+</h3>
 <form action="/delete" method="post">
   key:
   <input type="text" name="key" value="key">
@@ -25,32 +60,32 @@
 </form>
 </html>
 
-<h2>
+<h3>
   Get
-</h2>
+</h3>
 <form>
   key:
   <input type="text" name="key" value="key">
   <input type="button" value="Get" onclick="document.getElementById('iframea').src='/get/'+key.value;">
 </form>
 
-<h2>
+<h3>
   JSON
-</h2>
+</h3>
 <form>
   <input type="button" value="JSON" onclick="document.getElementById('iframea').src='/json';">
 </form>
 
-<h2>
+<h3>
   Yaml
-</h2>
+</h3>
 <form>
   <input type="button" value="Yaml" onclick="document.getElementById('iframea').src='/yaml';">
 </form>
 
-<h2>
+<h3>
   Respoce
-</h2>
+</h3>
 <br>
 <iframe id="iframea"></iframe>
 <br>

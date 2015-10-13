@@ -57,9 +57,9 @@ func Delete(c *gin.Context) {
 }
 
 func JSON(c *gin.Context) {
-	c.JSON(http.StatusOK, store.JSON())
+	c.String(http.StatusOK, store.JSON())
 }
 
 func Yaml(c *gin.Context) {
-	c.JSON(http.StatusOK, store.Yaml())
+	c.String(http.StatusOK, store.Yaml())
 }
